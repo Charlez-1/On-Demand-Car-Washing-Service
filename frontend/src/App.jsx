@@ -24,8 +24,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="register" element={<Register />} />
           <Route path="profile" element={<Profile />} />
-          <Route path="addtodo" element={<AddTodo />} />
-          <Route path="todo/:id" element={<SingleTodo />} />
+          
 
           <Route path="*" element={<NoPage />} />
         </Route>
