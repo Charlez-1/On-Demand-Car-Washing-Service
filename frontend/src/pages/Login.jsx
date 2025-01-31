@@ -1,5 +1,5 @@
 // Login.jsx
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Login = () => {
@@ -27,15 +27,34 @@ const Login = () => {
               <form onSubmit={handleSubmit}>
                 <div className="form-group">
                   <label htmlFor="email">Email address</label>
-                  <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
                 </div>
                 <div className="form-group">
                   <label htmlFor="password">Password</label>
-                  <input type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+                  <input
+                    type="password"
+                    className="form-control"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
                 </div>
-                <button type="submit" className="btn btn-primary">Login</button>
+                <button type="submit" className="btn btn-primary">
+                  Login
+                </button>
               </form>
-              <p className="mt-3">Don't have an account? <Link to="/register" className="text-primary">Register</Link></p>
+              <p className="mt-3">
+                Don&apos;t have an account?
+                <Link to="/register" className="text-primary">
+                  Register
+                </Link>
+              </p>
             </div>
           </div>
         </div>

@@ -1,41 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./components/Layout"
-import Navbar from "./components/Navbar"
-import Footer from "./components/Footer"
-import Home from "./pages/Home"
-import Login from "./pages/Login"
-import Register from "./pages/Register"
-import NoPage from "./pages/NoPage"
-import Profile from "./pages/Profile"
+import { Route, Routes } from 'react-router-dom';
+import './App.css';
+import Login from './pages/Login';
+import Home from './pages/Home';
+import Register from './pages/Register';
+import Layout from './components/Layout';
+import Profile from './pages/Profile';
+import NoPage from './pages/NoPage';
 
 function App() {
   return (
-    <BrowserRouter>
-
-     
-
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="login" element={<Login />} />
-          <Route path="register" element={<Register />} />
-          <Route path="profile" element={<Profile />} />
-          
-
-          <Route path="*" element={<NoPage />} />
-        </Route>
-      </Routes>
-
-      
-    
-     
-    </BrowserRouter>
-  )
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="profile" element={<Profile />} />
+      </Route>
+      <Route path="login" element={<Login />} />
+      <Route path="register" element={<Register />} />
+      <Route path="*" element={<NoPage />} />
+    </Routes>
+  );
 }
- 
 
-export default App
+export default App;
