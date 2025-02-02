@@ -14,38 +14,61 @@ const Register = () => {
   };
 
   return (
-    <div className="container-fluid">
-      <div className="row">
-        <div className="col-md-12">
-          <h1 className="text-center mt-5">Register</h1>
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+    <div className="w-full max-w-md bg-white shadow-lg rounded-2xl p-6">
+      <h1 className="text-3xl font-bold text-center text-gray-900 mb-6">Register</h1>
+      <p className="text-gray-600 text-center mb-6">Create your account to get started</p>
+
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Email Address</label>
+          <input
+            type="email"
+            className="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter your email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
         </div>
-      </div>
-      <div className="row mt-5">
-        <div className="col-md-6 offset-md-3">
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">Registration Form</h5>
-              <form onSubmit={handleSubmit}>
-                <div className="form-group">
-                  <label htmlFor="email">Email address</label>
-                  <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="password">Password</label>
-                  <input type="password" className="form-control" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
-                </div>
-                <div className="form-group">
-                  <label htmlFor="confirmPassword">Confirm Password</label>
-                  <input type="password" className="form-control" id="confirmPassword" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} />
-                </div>
-                <button type="submit" className="btn btn-primary">Register</button>
-              </form>
-              <p className="mt-3">Already have an account? <Link to="/login" className="text-primary">Login</Link></p>
-            </div>
-          </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Password</label>
+          <input
+            type="password"
+            className="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Enter your password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
         </div>
-      </div>
+
+        <div>
+          <label className="block text-sm font-medium text-gray-700">Confirm Password</label>
+          <input
+            type="password"
+            className="w-full px-4 py-3 rounded-lg bg-gray-100 border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            placeholder="Confirm your password"
+            value={confirmPassword}
+            onChange={(e) => setConfirmPassword(e.target.value)}
+          />
+        </div>
+
+        <button
+          type="submit"
+          className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition duration-300"
+        >
+          Register
+        </button>
+      </form>
+
+      <p className="text-center text-gray-600 mt-4">
+        Already have an account?{" "}
+        <Link to="/login" className="text-blue-600 hover:underline">
+          Login
+        </Link>
+      </p>
     </div>
+  </div>
   );
 };
 
