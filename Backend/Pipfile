@@ -8,6 +8,7 @@ flask = "*"
 flask-migrate = "*"
 flask-sqlalchemy = "*"
 flask-jwt-extended = "*"
+psycopg2-binary = "*"
 
 [dev-packages]
 

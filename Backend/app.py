@@ -11,7 +11,7 @@ from views.auth import auth_bp
 app = Flask(__name__)
 
 #Migration
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///car-wash.db'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://carwashdb_z647_user:A1PworpouoXCU49VbCxrvKqA6WeCWMA9@dpg-cug9pttsvqrc738dbp80-a.oregon-postgres.render.com/carwashdb_z647'
 migrate = Migrate(app, db)
 db.init_app(app)
 
