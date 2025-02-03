@@ -3,6 +3,10 @@ from flask_migrate import Migrate
 from models import db, TokenBlocklist
 from flask_jwt_extended import JWTManager
 from datetime import timedelta
+from views.user import user_bp
+from views.bookings import bookings_bp
+from views.service import service_bp
+from views.auth import auth_bp
 
 app = Flask(__name__)
 
@@ -24,7 +28,7 @@ from views import *
 
 
 app.register_blueprint(user_bp)
-app.register_blueprint(booking_bp)
+app.register_blueprint(bookings_bp)
 app.register_blueprint(service_bp)
 app.register_blueprint(auth_bp)
 
