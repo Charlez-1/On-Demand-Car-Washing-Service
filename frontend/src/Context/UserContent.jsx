@@ -18,7 +18,7 @@ export const UserProvider = ({ children }) =>
     const login = (email, password) => 
     {
         toast.loading("Logging you in ... ")
-        fetch("http://127.0.0.1:5000/login",{
+        fetch("http://127.0.0.1: 5000/login",{
             method:"POST",
             headers: {
                 'Content-type': 'application/json',

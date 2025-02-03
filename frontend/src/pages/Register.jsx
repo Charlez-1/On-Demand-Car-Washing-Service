@@ -1,8 +1,10 @@
 // Register.jsx
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../Context/UserContent';
 
 const Register = () => {
+  const {adduser} = useContext(UserContext);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
