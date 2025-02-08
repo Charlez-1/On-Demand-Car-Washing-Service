@@ -18,7 +18,7 @@ export const UserProvider = ({ children }) =>
     const login = (email, password) => 
     {
         toast.loading("Logging you in ... ")
-        fetch("https://on-demand-car-washing-service-1.onrender.com/login",{
+        fetch("http://127.0.0.1:5000/login",{
             method:"POST",
             headers: {
                 'Content-type': 'application/json',
@@ -36,7 +36,7 @@ export const UserProvider = ({ children }) =>
 
                 setAuthToken(response.access_token)
 
-                fetch('https://on-demand-car-washing-service-1.onrender.com/current_user',{
+                fetch('http://127.0.0.1:5000/current_user',{
                     method:"GET",
                     headers: {
                         'Content-type': 'application/json',
@@ -85,7 +85,7 @@ export const UserProvider = ({ children }) =>
     {
         console.log("Current user fcn ",authToken);
         
-        fetch('https://on-demand-car-washing-service-1.onrender.com/current_user',{
+        fetch('http://127.0.0.1:5000/current_user',{
             method:"GET",
             headers: {
                 'Content-type': 'application/json',
@@ -107,7 +107,7 @@ export const UserProvider = ({ children }) =>
     const addUser = (username, email, password) => 
     {
         toast.loading("Registering ... ")
-        fetch("https://on-demand-car-washing-service-1.onrender.com/users",{
+        fetch("http://127.0.0.1:5000/users",{
             method:"POST",
             headers: {
                 'Content-type': 'application/json',
